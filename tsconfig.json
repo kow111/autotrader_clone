@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["cypress", "node", "vite/client"],
+    "jsx": "preserve"
+  },
+  "include": ["src", "cypress/**/*.ts", "cypress/support/component.d.ts"]
+}
