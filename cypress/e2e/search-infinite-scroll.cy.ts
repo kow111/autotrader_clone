@@ -85,7 +85,7 @@ describe("Search infinite scroll", () => {
       const hasPageOne = interceptions.some((call) =>
         call.request.url.includes("page=1"),
       );
-      expect(hasPageOne).to.eq(true);
+      assert.isTrue(hasPageOne);
     });
 
     cy.contains("20 Matches").should("be.visible");

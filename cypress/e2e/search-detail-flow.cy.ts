@@ -59,7 +59,7 @@ describe("Search to detail flow", () => {
       const url = new URL(req.url);
 
       if (url.searchParams.getAll("features").length > 0) {
-        expect(url.searchParams.getAll("features")).to.deep.eq(["1"]);
+        assert.deepEqual(url.searchParams.getAll("features"), ["1"]);
       }
 
       req.reply(searchResponse);

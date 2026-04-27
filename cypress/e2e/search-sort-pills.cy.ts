@@ -72,7 +72,7 @@ describe("Search sort and active pills", () => {
     cy.get("@getCars.all", { timeout: 10000 }).should((calls) => {
       const interceptions = calls as unknown as Interception[];
       const last = interceptions[interceptions.length - 1];
-      expect(last.request.url).to.include("sort=price_desc");
+      assert.include(last.request.url, "sort=price_desc");
     });
 
     cy.url().should("include", "sort=price_desc");
@@ -84,7 +84,7 @@ describe("Search sort and active pills", () => {
     cy.get("@getCars.all", { timeout: 10000 }).should((calls) => {
       const interceptions = calls as unknown as Interception[];
       const last = interceptions[interceptions.length - 1];
-      expect(last.request.url).to.include("features=1");
+      assert.include(last.request.url, "features=1");
     });
     cy.url().should("include", "features=1");
 
@@ -97,7 +97,7 @@ describe("Search sort and active pills", () => {
     cy.get("@getCars.all", { timeout: 10000 }).should((calls) => {
       const interceptions = calls as unknown as Interception[];
       const last = interceptions[interceptions.length - 1];
-      expect(last.request.url).to.not.include("features=1");
+      assert.notInclude(last.request.url, "features=1");
     });
     cy.url().should("not.include", "features=1");
   });

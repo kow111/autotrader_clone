@@ -1,5 +1,5 @@
-import type { CheckboxOption } from "../components/CheckboxGroup";
-import type { SelectOption } from "../components/FilterSelect";
+import { CheckboxOption } from "@/components/filters/CheckboxGroup";
+import { SelectOption } from "@/components/filters/FilterSelect";
 
 export const CONDITION_OPTIONS: CheckboxOption[] = [
   { label: "New", value: "New" },
